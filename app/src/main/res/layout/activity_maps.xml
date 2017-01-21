@@ -1,0 +1,124 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity"
+    android:background="@drawable/background2">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="340dp"
+    android:id="@+id/map_size">
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/map"
+    tools:context=".MapsActivity"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true" />
+</LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Distance:\n --.--"
+        android:textSize="20sp"
+        android:textColor="@color/WHITE"
+        android:background="@drawable/shapes"
+        android:paddingRight="15sp"
+        android:paddingTop="10sp"
+        android:id="@+id/textView_distance"
+        android:layout_below="@+id/map_size"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Speed:\n -- m/s"
+        android:textSize="20sp"
+        android:textColor="@color/WHITE"
+        android:background="@drawable/shapes"
+        android:paddingRight="15sp"
+        android:paddingTop="10sp"
+        android:id="@+id/speedView"
+        android:layout_below="@+id/textView_distance"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="90dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" Altitude:\n --.--"
+        android:textSize="20sp"
+        android:textColor="@color/WHITE"
+        android:background="@drawable/shapes"
+        android:paddingRight="15sp"
+        android:paddingTop="10sp"
+        android:id="@+id/textView_altitude"
+        android:layout_below="@+id/speedView"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reset Lifetime Stats"
+        android:textColor="@color/WHITE"
+        android:id="@+id/reset"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reset?"
+        android:textColor="@color/WHITE"
+        android:id="@+id/textView"
+        android:visibility="gone"
+        android:layout_alignTop="@+id/textView_altitude"
+        android:layout_toEndOf="@+id/cameraButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="YES"
+        android:textColor="@color/RED"
+        android:clickable="true"
+        android:visibility="gone"
+        android:id="@+id/reset_yes"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_toEndOf="@+id/reset" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="NO"
+        android:visibility="gone"
+        android:textColor="@color/WHITE"
+        android:clickable="true"
+        android:id="@+id/reset_no"
+        android:layout_above="@+id/reset"
+        android:layout_toEndOf="@+id/reset" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraButton"
+        android:src="@drawable/camera_front"
+        android:layout_below="@+id/map_size"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

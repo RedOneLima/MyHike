@@ -1,0 +1,113 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity"
+    android:background="@drawable/background">
+           <fragment
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="375dp"
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".MapsActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="485dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapes"
+        android:textColor="@color/WHITE"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Distance:\n --.--"
+        android:textSize="30sp"
+        android:id="@+id/textView_distance"
+        android:layout_toStartOf="@+id/map" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="485dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapes"
+        android:textColor="@color/WHITE"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Speed:\n --.-- m/s"
+        android:textSize="30sp"
+        android:layout_toStartOf="@+id/map"
+        android:id="@+id/speedView"
+        android:layout_below="@+id/textView_distance" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="485dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapes"
+        android:textColor="@color/WHITE"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Altitide: \n--.--"
+        android:textSize="30sp"
+        android:id="@+id/textView_altitude"
+        android:layout_toStartOf="@+id/map"
+        android:layout_below="@+id/speedView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reset Lifetime Stats"
+        android:textColor="@color/WHITE"
+        android:id="@+id/reset"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reset?"
+        android:textColor="@color/WHITE"
+        android:id="@+id/textView"
+        android:visibility="gone"
+        android:layout_marginStart="43dp"
+        android:layout_marginBottom="11dp"
+        android:layout_above="@+id/reset_yes"
+        android:layout_toEndOf="@+id/reset" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="YES"
+        android:textColor="@color/RED"
+        android:clickable="true"
+        android:visibility="gone"
+        android:id="@+id/reset_yes"
+        android:layout_above="@+id/reset_no"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="11dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="NO"
+        android:visibility="gone"
+        android:textColor="@color/WHITE"
+        android:clickable="true"
+        android:id="@+id/reset_no"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/reset_yes" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraButton"
+        android:src="@drawable/camera_front"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/map" />
+
+</RelativeLayout>
